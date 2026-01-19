@@ -6,6 +6,11 @@
     <title>النشرة التقنية - معهد نظم المعلومات الأمنية وتطبيقات الذكاء الاصطناعي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary-dark: #0a1628;
             --primary-blue: #1a365d;
@@ -88,7 +93,7 @@
             width: 90px;
             height: auto;
             border-radius: 8px;
-            /* box-shadow: 0 4px 20px rgba(212, 168, 85, 0.3); */
+           /*  box-shadow: 0 4px 20px rgba(212, 168, 85, 0.3); */
             background: transparent;
             mix-blend-mode: screen;
             filter: brightness(1.1);
@@ -812,6 +817,21 @@
                 page-break-inside: avoid;
             }
         }
+
+        .featured-link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-item:target {
+            animation: highlight-pulse 2s ease-out;
+            border-color: var(--accent-gold) !important;
+        }
+
+        @keyframes highlight-pulse {
+            0% { background: rgba(212, 168, 85, 0.3); }
+            100% { background: rgba(10, 22, 40, 0.5); }
+        }
     </style>
 </head>
 <body>
@@ -871,47 +891,44 @@
             </div>
         </div>
 
-        <!-- Featured News - الخبر الأبرز -->
-        <div class="featured-news">
-            <div class="featured-badge">🔥 الخبر الأبرز</div>
+        <!-- Featured News - الأخبار الأبرز -->
+        <div class="featured-news" style="background: linear-gradient(135deg, rgba(26, 54, 93, 0.6) 0%, rgba(10, 22, 40, 0.8) 100%);">
+            <div class="featured-badge">🔥 أبرز الأخبار</div>
 
             <div class="featured-content">
-                <div class="featured-header">
-                    <div class="featured-icon">🤝</div>
-                    <div class="featured-text">
-                        <h3>آبل تتعاون مع جوجل لتشغيل Siri بتقنية Gemini</h3>
-                        <p>
-                            أعلنت آبل وجوجل عن شراكة استراتيجية متعددة السنوات ستعتمد فيها آبل على نماذج Gemini وتقنيات جوجل السحابية لتشغيل الجيل القادم من Apple Foundation Models وتطوير مساعد Siri الذكي. وأكدت آبل أن "تقنية جوجل توفر الأساس الأكثر قدرة لـ Apple Foundation Models". ستستمر النماذج في العمل على أجهزة آبل وخوادم Private Cloud Compute الخاصة بها، مع الحفاظ على شراكة ChatGPT القائمة للاستفسارات المعقدة.
-                        </p>
+                <!-- الخبر الأول: Microsoft Patch Tuesday -->
+                <a href="#news-microsoft-patch" class="featured-link-card" style="display: block; text-decoration: none; background: rgba(220, 38, 38, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 15px; transition: all 0.3s ease;">
+                    <div class="featured-header" style="margin-top: 0;">
+                        <div class="featured-icon" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); width: 50px; height: 50px; font-size: 1.5rem;">🛡️</div>
+                        <div class="featured-text">
+                            <h3 style="color: #f87171; font-size: 1.15rem; margin-bottom: 8px;">Microsoft Patch Tuesday يناير 2026: 114 ثغرة و3 Zero-Days</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 0;">
+                                أصدرت مايكروسوفت تحديثات لإصلاح <strong>114 ثغرة أمنية</strong>، منها ثغرة Zero-Day مُستغلة بشكل نشط. أضافتها CISA فوراً إلى قائمة الثغرات المُستغلة.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(239, 68, 68, 0.2);">
+                        <span style="font-size: 0.85rem; color: #9ca3af;">📅 14 يناير 2026</span>
+                        <span style="font-size: 0.85rem; color: #f87171; margin-right: auto;">← اقرأ التفاصيل</span>
+                    </div>
+                </a>
 
-                <div class="featured-keypoints">
-                    <div class="featured-keypoint">
-                        <span class="kp-icon">📱</span>
-                        <span>شراكة متعددة السنوات</span>
+                <!-- الخبر الثاني: VoidLink -->
+                <a href="#news-voidlink" class="featured-link-card" style="display: block; text-decoration: none; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 20px; transition: all 0.3s ease;">
+                    <div class="featured-header" style="margin-top: 0;">
+                        <div class="featured-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); width: 50px; height: 50px; font-size: 1.5rem;">X</div>
+                        <div class="featured-text">
+                            <h3 style="color: #a78bfa; font-size: 1.15rem; margin-bottom: 8px;">إطار برمجيات خبيثة VoidLink يستهدف بيئات Linux السحابية</h3>
+                            <p style="font-size: 0.95rem; margin-bottom: 0;">
+                                اكتشف باحثو Check Point إطار برمجيات خبيثة متطور مصمم للوصول <strong>طويل الأمد والخفي</strong> إلى بيئات Linux السحابية مع أدوات معيارية متقدمة.
+                            </p>
+                        </div>
                     </div>
-                    <div class="featured-keypoint">
-                        <span class="kp-icon">🧠</span>
-                        <span>Gemini يشغّل Apple Foundation Models</span>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(139, 92, 246, 0.2);">
+                        <span style="font-size: 0.85rem; color: #9ca3af;">📅 13 يناير 2026</span>
+                        <span style="font-size: 0.85rem; color: #a78bfa; margin-right: auto;">← اقرأ التفاصيل</span>
                     </div>
-                    <div class="featured-keypoint">
-                        <span class="kp-icon">🔒</span>
-                        <span>الحفاظ على الخصوصية في أجهزة آبل</span>
-                    </div>
-                    <div class="featured-keypoint">
-                        <span class="kp-icon">💬</span>
-                        <span>استمرار شراكة ChatGPT</span>
-                    </div>
-                </div>
-
-                <div class="featured-meta">
-                    <span class="news-date">📅 12 يناير 2026</span>
-                    <div class="news-sources">
-                        <a href="https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html" class="news-source intl" target="_blank">CNBC</a>
-                        <a href="https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/" class="news-source intl" target="_blank">TechCrunch</a>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -987,7 +1004,7 @@
                 <h2>الأمن السيبراني</h2>
             </div>
             <div class="section-content">
-                <div class="news-item">
+                <div class="news-item" id="news-microsoft-patch">
                     <h3>Microsoft Patch Tuesday يناير 2026: 114 ثغرة و3 Zero-Days</h3>
                     <p>
                         أصدرت مايكروسوفت تحديثات يناير 2026 لإصلاح 114 ثغرة أمنية، منها 12 حرجة و3 ثغرات Zero-Day. الثغرة المُستغلة بشكل نشط هي <span style="font-family: monospace; background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px;">CVE-2026-20805</span> في Desktop Window Manager والتي تسمح بكشف معلومات حساسة. أضافتها CISA فوراً إلى قائمة الثغرات المُستغلة. كما تضمن التحديث إصلاحات لثغرات RCE حرجة في Office وSharePoint.
@@ -1020,7 +1037,7 @@
                     </div>
                 </div>
 
-                <div class="news-item">
+                <div class="news-item" id="news-voidlink">
                     <h3>إطار برمجيات خبيثة VoidLink يستهدف بيئات Linux السحابية</h3>
                     <p>
                         اكتشف باحثو Check Point إطار برمجيات خبيثة متطور يُدعى VoidLink مصمم خصيصاً للوصول طويل الأمد والخفي إلى بيئات Linux السحابية. يتضمن الإطار مجموعة من أدوات التحميل والزراعة والجذور الخفية والإضافات المعيارية التي تمكّن المهاجمين من تعديل قدراته والتكيف مع أهدافهم المتغيرة.
